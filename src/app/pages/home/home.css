@@ -1,0 +1,143 @@
+.hero {
+  position: relative;
+  text-align: center;
+  background: #eef6ff;
+  padding: 50px 20px;
+}
+ 
+.hero-text {
+  margin-top: 20px;
+}
+ 
+.hero h1 {
+  font-size: 2rem;
+  color: #0056a3;
+}
+ 
+.hero h1 {
+  font-size: 55px;
+  color: #0056a3;
+  animation: serialLight 2s infinite;
+  font-family: 'Monoton', sans-serif;
+}
+ 
+.hero h2{
+  font-size: 30px;
+  color:#02667a;
+}
+ 
+@keyframes serialLight {
+  0% {
+    color: #0056a3;
+  }
+  85% {
+    color: #4fbdd3;
+  }
+ 
+}
+ 
+.hero-text p{
+    font-size: 1rem;
+    color: rgb(2, 49, 96);
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+ 
+.top-courses h2{
+  text-align: center;
+  font-size: 50px;
+  color: white;  
+}
+ 
+.events h2{
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+ 
+.events p{
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  animation: serialLight 2s infinite;
+  font-family: 'Monoton', sans-serif;
+}
+ 
+.testimonials h2{
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+ 
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+ 
+.card {
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+ 
+.card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+ 
+ 
+ 
+.card:hover {
+  transform: scale(1.05) translateX(8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+ 
+ 
+ .newsletter p{
+  color: rgb(215, 106, 106);
+  font-weight: bold;
+  font-size: 15px;
+ }
+.newsletter {
+  text-align: center;
+  margin: 40px 0;
+}
+ 
+.newsletter h2{
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+ 
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+}
+ button {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

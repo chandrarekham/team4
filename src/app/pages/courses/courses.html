@@ -1,0 +1,12 @@
+<section class="top-courses">
+  <h2>Our Popular Courses</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let course of courses">
+      <img [src]="course.image" [alt]="course.title">
+      <h3>{{ course.title }}</h3>
+      <p>Duration: {{ course.duration }}</p>
+      <button (click)="enroll(course)">Enroll Now</button>
+    </div>
+  </div>
+</section>
+

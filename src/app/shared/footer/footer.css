@@ -1,0 +1,40 @@
+footer {
+  background: lightblue;
+  color: black;
+  padding-top: 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-top div {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-top h4 {
+  margin-bottom: 10px;
+}
+
+.footer-top a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-top a:hover {
+  color: #f3efef;
+}
+.contact-info a{
+  gap: 2rem;
+}
+.footer-bottom {
+  text-align: center;
+  background: #82dff6;
+  padding: 10px;
+  font-size: 14px;
+}

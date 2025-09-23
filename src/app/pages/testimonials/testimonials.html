@@ -1,0 +1,63 @@
+<section class="page-title">
+  <h1>Testimonials</h1>
+</section>
+
+<section class="testimonial-section">
+  <h1 class="testimonial-quote">
+    "Every success story begins with trust.<br />
+    Here are a few of ours."
+  </h1>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card" *ngFor="let t of testimonials">
+      <p>{{ t.message }}</p>
+      <div class="author-info">
+        <img *ngIf="t.image" [src]="t.image" alt="{{ t.name }}" />
+        <div class="author-details">
+          <strong>{{ t.name }}</strong>
+          <span>{{ t.role }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-header">
+    <h2>Built for people like you,<br />loved by people like you</h2>
+    <p>
+      We empower students to achieve their career goals through practical training, expert guidance, and continuous support.
+    </p>
+  </div>
+
+ <!-- Testimonial submission form -->
+  <div class="form-container">
+    <h2>Share your experience</h2>
+    <form #testimonialForm="ngForm" (ngSubmit)="onSubmit(testimonialForm)">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        ngModel
+        required
+      />
+      <input
+        type="text"
+        name="role"
+        placeholder="Your Role / Package"
+        ngModel
+      />
+      <input
+        type="text"
+        name="image"
+        placeholder="Image URL (optional)"
+        ngModel
+      />
+      <textarea
+        name="message"
+        placeholder="Write your testimonial..."
+        ngModel
+        required
+      ></textarea>
+      <button type="submit" [disabled]="testimonialForm.invalid">Submit</button>
+    </form>
+  </div>
+</section>

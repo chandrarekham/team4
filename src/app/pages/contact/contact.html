@@ -1,0 +1,59 @@
+<main class="contact-container"> 
+
+  <!-- Left Side --> 
+
+  <div class="contact-info"> 
+
+    <h3>Get in Touch</h3> 
+
+    <p><b>📍 Address:</b> 123 Learning Street, Chennai, India</p> 
+
+    <p><b>📞 Phone:</b> +91 9876543210</p> 
+
+    <p><b>✉️ Email:</b> info@traininginstitute.com</p> 
+
+ 
+
+    <iframe 
+
+      src="https://www.google.com/maps/embed?pb=!1m18..." 
+
+      width="100%" 
+
+      height="200" 
+
+      style="border:0;" 
+
+      allowfullscreen 
+
+      loading="lazy"> 
+
+    </iframe> 
+
+  </div> 
+
+ 
+
+  <!-- Right Side --> 
+
+  <div class="contact-form"> 
+
+    <h3>Send Us a Message</h3> 
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)"> 
+
+      <input type="text" name="name" ngModel placeholder="Your Name" required> 
+
+      <input type="email" name="email" ngModel placeholder="Your Email" required> 
+
+      <input type="text" name="subject" ngModel placeholder="Subject" required> 
+
+      <textarea name="message" ngModel placeholder="Your Message" rows="5" required></textarea> 
+
+      <button type="submit">📩 Send Message</button> 
+
+    </form> 
+
+  </div> 
+
+</main> 

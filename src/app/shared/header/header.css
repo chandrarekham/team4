@@ -1,0 +1,39 @@
+/* ===== Header ===== */
+header {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Announcement bar */
+.announcement {
+  background: #0056a3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 6px 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background: lightblue;
+}
+
+.navbar .logo img {
+  height: 130px;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #0056a3;
+}

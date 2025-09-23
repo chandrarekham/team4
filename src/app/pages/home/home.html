@@ -1,0 +1,50 @@
+<section class="hero">
+  <h1><pre>ProLearn Academy</pre></h1>
+  <div class="hero-text">
+    <h2>Welcome to Training Institute</h2>
+    <p>Empowering Students with Modern Skills</p>
+  </div>
+</section>
+ 
+<!-- Courses -->
+<section class="top-courses">
+  <h2>Our Popular Courses</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let course of courses">
+      <img [src]="course.image" [alt]="course.title">
+      <h3>{{ course.title }}</h3>
+      <p>Duration: {{ course.duration }}</p>
+     <button (click)="goToCourses()">Learn More</button>
+
+    </div>
+  </div>
+</section>
+ 
+<!-- Events -->
+<section class="events">
+  <h2>Upcoming Events</h2>
+  <p>Stay tuned for workshops and seminars.</p>
+</section>
+ 
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>Reviews</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let t of testimonials">
+      <p>"{{ t.feedback }}"</p>
+      <h4>- {{ t.name }}</h4>
+    </div>
+  </div>
+</section>
+ 
+<!-- Newsletter -->
+<section class="newsletter">
+  <h2>Subscribe to our Newsletter</h2>
+  <form (ngSubmit)="subscribe()" #newsletterForm="ngForm">
+    <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+    <p>{{ message }}</p>
+  </form>
+</section>
+ 
+ 

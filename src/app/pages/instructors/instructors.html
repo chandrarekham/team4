@@ -1,0 +1,25 @@
+ <div class="container">
+  <h2>Meet Our Instructors</h2>
+  <div class="in-li">
+    <div class="in-card" *ngFor="let instructor of instructor; let i = index">
+      <img
+        [src]="instructor.image" alt="{{instructor.name}}"
+      />
+     <strong>
+      <h3>{{ instructor.name }}</h3>
+    </strong>
+      <p>Expert in {{ instructor.expertise }}</p>
+      <p>Email: {{ instructor.email }}</p>
+      <p>Phone: {{instructor.phone}}</p>
+ 
+     
+      <p *ngIf="instructor.showmore">
+        {{ instructor.description }}
+      </p>
+     
+      <button class="btn" (click)="toggleDetails(i)">
+        {{ instructor.showmore ? 'Read Less' : 'Read More' }}
+      </button>
+    </div>
+  </div>
+</div>  

@@ -1,0 +1,73 @@
+.container {
+  text-align: center;
+  padding: 30px;
+}
+ 
+ .btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: rgb(16, 139, 239);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+ 
+.btn:hover {
+  background-color: rgb(9, 229, 49);
+}
+ 
+h2 {
+  color: rgb(250, 242, 242);
+  font-size: 3pc;
+  text-align: center;
+  margin-bottom: 50px;
+}
+ 
+.in-li {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+ 
+.in-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  gap:10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  box-sizing: border-box;
+  padding-bottom: 30px; /* more room for expanding description */
+}
+ 
+ .in-card:hover {
+  transform: translateY(-15px);
+}
+ 
+.in-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+  padding-left: 0px;
+} 
+ 
+.description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+ 
+.description.showmore {
+  max-height: 200px; /* adjust as needed */
+   opacity: 1;
+ pointer-events: auto;
+}
+ 
+ 

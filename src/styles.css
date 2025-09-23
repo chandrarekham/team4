@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('https://png.pngtree.com/background/20220731/original/pngtree-blue-blur-background-hd-picture-image_1914175.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: keeps background fixed during scroll */
+  color: #333; /* Keep text readable */
+  margin: 0;
+  font-family: Arial, sans-serif; /* Your font */
+}
