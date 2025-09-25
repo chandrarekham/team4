@@ -8,19 +8,22 @@
     Here are a few of ours."
   </h1>
 
-  <div class="testimonial-grid">
+  
+
+ <div class="testimonial-grid">
     <div class="testimonial-card" *ngFor="let t of testimonials">
       <p>{{ t.message }}</p>
       <div class="author-info">
-        <img *ngIf="t.image" [src]="t.image" alt="{{ t.name }}" />
+        <img [src]="t.image" alt="user" />
         <div class="author-details">
           <strong>{{ t.name }}</strong>
           <span>{{ t.role }}</span>
+ 
         </div>
+       
       </div>
     </div>
   </div>
-
   <div class="testimonial-header">
     <h2>Built for people like you,<br />loved by people like you</h2>
     <p>

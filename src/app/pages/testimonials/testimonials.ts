@@ -1,47 +1,116 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
+import { Router, RouterModule } from '@angular/router';
+import { Course1 } from '../../course1';
+export interface Testimonial {
+  id?: string;
+  name: string;
+  role?: string;
+  image?: string;
+  message: string;
+}
 @Component({
   selector: 'app-testimonials',
   imports: [CommonModule,RouterModule,FormsModule],
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.css'
 })
-export class Testimonials  {
 
-  testimonials = [
-    {
-      name: 'Chandrarekha M',
-      message: 'A wonderful experience! Everything was easy to use, and I felt supported at every step.',
-      role: '8 LPA',
-      image: 'assets/images/rekhapic.jpg'
-    },
-    {
-      name: 'Deepa',
-      message: 'The learning experience was excellent! The concepts were explained clearly, and I feel more confident now.',
-      role: '12 LPA',
-      image: 'assets/images/student1.jpg'
-    },
-    {
-      name: 'Sneha C S',
-      message: 'Thanks to the guidance and support I received here, I was able to land my dream job.',
-      role: '15 LPA',
-      image: 'assets/images/student2.jpg'
-    }
-  ];
 
-  get latestTestimonial() {
-    return this.testimonials.length
-      ? this.testimonials[this.testimonials.length - 1]
-      : null;
+export class Testimonials implements OnInit {
+  testimonials: Testimonial[] = [];
+ 
+  constructor(private course1: Course1) {}
+ 
+  ngOnInit() {
+    this.fetchTestimonials();
   }
-
-  onSubmit(form: any) {
+ 
+  fetchTestimonials() {
+    this.course1.getTestimonials().subscribe({
+      next: (data) => this.testimonials = data,
+      error: (err) => console.error('Error fetching testimonials:', err)
+    });
+  }
+ 
+  onSubmit(form: NgForm) {
     if (form.valid) {
-      this.testimonials.push(form.value);
-      form.reset();
+      const newTestimonial: Testimonial = form.value;
+      this.course1.addTestimonial(newTestimonial).subscribe({
+        next: (saved) => {
+          this.testimonials.push(saved);
+          form.reset();
+        },
+        error: (err) => console.error('Error adding testimonial:', err)
+      });
     }
   }
 }
+
+
+
+
+
+
+
+
+
+  // Testimonials: any[] = [];
+
+  // constructor(private router: Router, private course1: Course1) {}
+
+  // ngOnInit(): void {
+  //   this.loadTestimonials();
+  // }
+
+
+
+  // loadTestimonials() {
+  //   this.course1.getTestimonials().subscribe({
+  //     next: (data: any[]) => {
+  //       this.Testimonials = data;
+  //     },
+  //     error: (err: any) => {
+  //       console.error('Error fetching testimonials:', err);
+  //     }
+  //   });
+
+  
+
+  
+
+  // ngOnInit() {
+  //   this.fetchTestimonials();
+  // }
+
+  // fetchTestimonials() {
+  //   this.course1.getTestimonials().subscribe({
+  //     next: (data) => {
+  //       this.testimonials = data;
+  //     },
+  //     error: (err) => {
+  //       console.error('Error fetching testimonials:', err);
+  //     }
+  //   });
+//   }
+
+//   onSubmit(form: any) {
+//     if (form.valid) {
+//       const newTestimonial: Testimonials = form.value;
+
+//       this.course1. addTestimonial(newTestimonial).subscribe({
+//         next: (saved: Testimonials) => {
+//           this.Testimonials.push(saved);  // Add the saved testimonial to local list
+//           form.reset();
+//         },
+//         error: (err: any) => {
+//           console.error('Error adding testimonial:', err);
+//         }
+//       });
+//     }
+//   }
+
+
+
+// }

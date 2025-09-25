@@ -10,8 +10,7 @@ import { Instructors } from './pages/instructors/instructors';
 import { Contact } from './pages/contact/contact';
 import { FormsModule } from '@angular/forms';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app.routes';
+
 
 @Component({
   selector: 'app-root',

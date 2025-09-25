@@ -15,11 +15,16 @@ export const routes: Routes = [{
    {path:'instructors',component:Instructors},
    {path:'testimonials',component:Testimonials},
    {path:'contact',component:Contact},
-  
-  
-
-   {path:'**',redirectTo:''}
+  {path:'**',redirectTo:''}
 ];
+// Define this somewhere, ideally in your service file or a shared model file.
+export interface Testimonial {
+  name: string;
+  message: string;
+  role: string;
+  image: string;
+}
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
